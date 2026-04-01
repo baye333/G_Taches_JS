@@ -1,27 +1,83 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
-    background: #f4f4f4;
+    background: #b4afff;
 }
 
 h1 {
     text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: bold;
 }
+h1 .first {
+    color: #007bff;
+    font-weight: bold;
+    animation: bouge 1s ease-in-out infinite;
+      margin-bottom: 20px;
+    font-size: 30px;
+}
+@keyframes bouge {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.para {
+    color: #0d0ddf;
+     font-size: 20px;
+     margin-bottom: 10px;
+     font-weight: bold;
+     padding-left: 150px;
+
+
+ }
 
 form {
     margin-bottom: 20px;
     text-align: center;
 }
 
-input {
+input[type="text"] {
     padding: 8px;
-    width: 400px;
+    width: 800px;
+    height: 50px;
+    border-radius: 25px;
+}
+#taskInput {
+    margin-right: 20px;
+    background: #3d3b3b;
+     color: #fff;
+     border: #323030;
+     box-shadow: 0 0 10px #323030;
 }
 
-button {
+button  {
     padding: 8px 12px;
     margin-left: 5px;
     cursor: pointer;
+    background: #003d7d;
+    color: #fff;
+    border-radius: 50px;
+    height: 50px;
+    width: 100px;
+}
+button:hover {
+    background: #012347;
+    color: #fff;
+    box-shadow: 0 0 10px #012347;
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
+    transition-property: background-color, color, box-shadow, transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
 }
 
 ul {
@@ -30,11 +86,91 @@ ul {
 }
 
 li {
-    background: #fff;
+    background: #3d3b3b;
     margin: 5px 0;
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 4px;
+    border-radius: 14px;
+    margin-top: 19px;
+}
+li:hover {
+    background: #323030;
+
+    transition: all 0.3s ease-in-out;
+
+    transform: translateY(-5px);
+}
+li.completed {
+    text-decoration: line-through;
+    color: gray;
+    font-style: italic;
+    background: #323030;
+
+}
+span {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+    transform: scale(1.5);
+    transform-origin: top left;
+}
+
+#clearAll {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 15px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#clearAll:hover {
+    background: gray
+}
+
+
+
+.modal {
+    display: none; /* caché par défaut */
+    position: fixed;
+    z-index: 1;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background: #b4afff;
+    margin: 15% auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.close {
+    float: right;
+    font-size: 44px;
+    cursor: pointer;
+    color: #000;
+}
+#editInput {
+    margin-bottom: 10px;
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px auto;
+    background: #3d3b3b;
+     color: #fff;
+     border: #323030;
+     box-shadow: 0 0 10px #323030;
 }

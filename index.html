@@ -6,16 +6,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Gestion des Tâches</h1>
+    <h1>Gestionnaire <span class="first">de tâches</span></h1>
 
     <!-- Formulaire d'ajout -->
+    <p class="para">Remplir le formulaire ci-dessous pour ajouter une tâche.</p>
     <form id="taskForm">
         <input type="text" id="taskInput" placeholder="Ajouter une tâche..." required>
         <button type="submit">Ajouter</button>
+<!-- <br>
+<br>
+        <input type="checkbox" id="taskCheckbox" checked>
+        <label for="taskCheckbox">Tout cocher</label> -->
     </form>
+<!-- Modal pour modification -->
+<div id="editModal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal" class="close">&times;</span>
+    <h2>Modifier la tâche</h2>
+    <form id="editForm">
+      <input type="text" id="editInput" required>
+      <button type="submit">Enregistrer</button>
+    </form>
+  </div>
+</div>
 
     <!-- Liste des tâches -->
     <ul id="taskList"></ul>
+
+    <!-- Bouton pour tout effacer -->
+    <button onmouseover="showMessage()"id="clearAll">Tout effacer</button>
 
     <script src="app.js"></script>
 </body>
